@@ -12,13 +12,13 @@ const Card = ({product}) => {
             </div>
             <div>
                 <h2 className='font-bold text-[24px] my-2'>{product.name}</h2>
-                <p>{product.description}</p>
-                <h3 className='my-1 '><span className='font-bold text-[20px]'>${product.price}</span>/{product.period}</h3>
+                <p className='text-[#627382]'>{product.description}</p>
+                <h3 className='my-1 '><span className='font-bold text-[20px]'>${product.price}</span>/<span className='text-[#627382]'>{product.period}</span></h3>
                 <ul>
                     {product.features.map((feature, index) => 
                         <li 
                             key={index}
-                            className='flex gap-1 items-center my-1'
+                            className='flex gap-1 items-center my-1 text-[#627382]'
                         >    
                             <div className='text-green-500'><IoMdCheckmark/></div>{feature}
                         </li>
