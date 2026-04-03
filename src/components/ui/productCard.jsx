@@ -3,9 +3,15 @@ import { IoMdCheckmark } from "react-icons/io";
 
 import TagText from './tag';
 
-const ProductCard = ({handleAddToCart, product}) => {
+const ProductCard = ({ product, cartItems, setCartItems}) => {
     const [addedToCart, setAddedToCart] = useState(true);
-    console.log(product);
+    const handleAddToCart = ({product}) => {
+        const newProduct = [...cartItems, product];
+        setCartItems(newProduct);
+        console.log("product is:", product);
+        //console.log("Added to Product!", product);
+    }
+    //console.log(product);
     return (
         <div className='w-96 bg-base-100 shadow-sm rounded-md p-5 m-2'>
             <div className='flex justify-between'>

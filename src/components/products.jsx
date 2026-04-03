@@ -4,15 +4,13 @@ import { use } from 'react';
 
 import ProductCard from './ui/productCard';
 
-const Products = ({handleAddToCart, fetchProducts}) => {
+const Products = ({ fetchProducts, cartItems, setCartItems}) => {
     const products = use(fetchProducts);
-    // const [cartItems, setCartItems] = useState([]);
-    // const handleAddToCart = (product) => {
+    // const handleAddToCart = ({product}) => {
     //     const newProduct = [...cartItems, product];
     //     setCartItems(newProduct);
-    //     console.log("Added to Product!", product);
+    //     //console.log("Added to Product!", product);
     // }
-    // console.log(products,  "products")
     return (
         <div>
             <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 w-[1200px] justify-center mx-auto my-5'>
@@ -20,7 +18,7 @@ const Products = ({handleAddToCart, fetchProducts}) => {
                     <div 
                         key={product.id}
                     >
-                        <ProductCard handleAddToCart={handleAddToCart} product={product}/>
+                        <ProductCard product={product} cartItems={cartItems} setCartItems={setCartItems}/>
                     </div>
                 )}
             </div>
