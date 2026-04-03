@@ -15,9 +15,10 @@ const Carts = ({cartItems, setCartItems}) => {
     const handleToProceed = () => {
         setCartItems([]);
     }
-    let totalPrice = 0;
+
     const updatePrice = () => {
-        cartItems.map(cart => totalPrice+cart.price);
+        let total = cartItems.reduce((initialPrice, item) => initialPrice + item.price, 0);
+        return total;
     }
     let currentPrice = updatePrice();
     return (

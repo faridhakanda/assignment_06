@@ -4,14 +4,8 @@ import { IoMdCheckmark } from "react-icons/io";
 import TagText from './tag';
 
 const ProductCard = ({ product, handleAddToCart}) => {
-    const [addedToCart, setAddedToCart] = useState(true);
-    // const handleAddToCart = ({product}) => {
-    //     const newProduct = [...cartItems, product];
-    //     setCartItems(newProduct);
-    //     console.log("product is:", product);
-    //     //console.log("Added to Product!", product);
-    // }
-    //console.log(product);
+    const [addedToCart, setAddedToCart] = useState(false);
+    
     return (
         <div className='w-96 bg-base-100 shadow-sm rounded-md p-5 m-2'>
             <div className='flex justify-between'>
@@ -38,12 +32,13 @@ const ProductCard = ({ product, handleAddToCart}) => {
                 onClick={() => 
                     {
                         handleAddToCart(product)
-                        setAddedToCart(false)
+                        setAddedToCart(!addedToCart)
                     }
                     
                 }
                 className='cursor-pointer bg-gradient-to-l from-[#9514FA] to-[#4F39F6] w-full my-2 p-2 text-[#FFFFFF] font-medium rounded-full'
-            >{addedToCart ? "Buy Now" : "Added to Cart"}</button>
+                disabled={addedToCart}
+            >{addedToCart ? "Added to Cart" : "Buy Now"}</button>
         </div>
     );
 };

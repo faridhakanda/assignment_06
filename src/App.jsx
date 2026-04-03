@@ -49,12 +49,10 @@ function App() {
         </div>
         <Suspense 
             fallback={
-                    <div className='flex mx-auto justify-center my-5'>
-                        <span className="loading loading-spinner loading-xl"></span>
-                    </div>
+                    <span className="flex mx-auto justify-center my-5 loading loading-spinner loading-xl"></span>
                 }
             >
-            {changeBtn === "products" ? 
+            {changeBtn === 'products' ? 
                 <Products  fetchProducts={fetchProducts} handleAddToCart={handleAddToCart}/> : 
                 <Carts  cartItems={cartItems} setCartItems={setCartItems}/>
             }
