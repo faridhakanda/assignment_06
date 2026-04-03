@@ -2,7 +2,7 @@
 import { use } from 'react';
 import ProductCard from './ui/productCard';
 
-const Products = ({ fetchProducts, handleAddToCart}) => {
+const Products = ({  fetchProducts, handleAddToCart}) => {
     const products = use(fetchProducts);
     return (
         <div>

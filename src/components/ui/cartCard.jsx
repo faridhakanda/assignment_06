@@ -1,7 +1,7 @@
 import React from 'react';
 //import operation from "../../assets/products/camera.png"
 const CartCard = ({cartProduct, handleDeleteToCart}) => {
-    console.log(cartProduct, "Cart item is added!");
+    //console.log(cartProduct, "Cart item is added!");
     return (
         <div className='flex justify-between space-x-5 bg-gray-300 p-5 m-1 rounded-md '>
             <div className='flex items-center space-x-3'>

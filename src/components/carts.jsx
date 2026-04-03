@@ -3,13 +3,13 @@ import CartCard from './ui/cartCard';
 
 const Carts = ({cartItems, setCartItems}) => {
     
-    console.log("Cart items: ", cartItems);
+    //console.log("Cart items: ", cartItems);
     let total = cartItems.length;
     const handleDeleteToCart = (product) => {
         const filteredProduct = cartItems.filter(cart => cart.name !== product.name)
         //console.log(filteredProduct);
         setCartItems(filteredProduct);
-        console.log("deleted product!");
+        //console.log("deleted product!");
     }
     
     const handleToProceed = () => {

@@ -3,7 +3,7 @@ import ShopingCart from "../assets/products/shopping-cart.png"
 const Header = ({cartItems}) => {
     const cartLength = cartItems.length;
     return (
-        <div className='shadow-sm '>
+        <div className='shadow-sm mx-auto justify-center'>
             <div className='flex justify-around py-2  items-center w-[1200px]  mx-auto'>
                 <div>
                     <h2 className='bg-gradient-to-l from-[#9514FA] to-[#4F39F6] text-3xl font-bold bg-clip-text text-transparent'>DigiTools</h2>
