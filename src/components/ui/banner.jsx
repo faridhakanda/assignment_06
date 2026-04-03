@@ -1,6 +1,6 @@
 import React from 'react';
-import Spinner from "https://i.ibb.co.com/cSTgzLKk/spinner.png"
-import BannerImg from 'https://i.ibb.co.com/RGPtRDcJ/banner.png'
+import Spinner from "../../assets/spinner.png"
+import BannerImg from "../../assets/banner.png"
 const Banner = () => {
     return (
         <div className='flex-row md:flex my-16 w-[1200px] mx-auto justify-between items-center'>
