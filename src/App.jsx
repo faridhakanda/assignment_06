@@ -11,13 +11,23 @@ const fetchProductsData = async () => {
     const products = await fetch('/data.json');
     return products.json();
   }
+
+  
 function App() {
   const [changeBtn, setChangeBtn] = useState("products");
-
   const fetchProducts = fetchProductsData();
+  
+  //const AddToCart = handleAddToCart();
+    const [cartItems, setCartItems] = useState([]);
+    const handleAddToCart = ({product}) => {
+        const newProduct = [...cartItems, product];
+        setCartItems(newProduct);
+        console.log("Added to Product!", product);
+    }
+    //const handleAddToCart = handleAddToCart1();
   return (
     <div className="">
-        <Header />
+        <Header cartItems={cartItems}/>
         <div className='text-center m-2'>
             <h2 className='font-extrabold text-[48px]'>Premium Digital Tools</h2>
             <p className='text-[#627382]'>Choose from our curated collection of premium digital products designed <br></br> to boost your productivity and creativity.</p>
@@ -26,22 +36,34 @@ function App() {
                     
                 <button 
                     onClick={() => setChangeBtn("products")}
-                    className={` ${changeBtn === "products" ? 'bg-gradient-to-l from-[#9514FA] to-[#4F39F6] font-medium text-[#FFFFFF]' : 'rounded-full'}   px-5 py-2 rounded-full`}>
+                    className={` ${changeBtn === "products" ? 'bg-gradient-to-l from-[#9514FA] to-[#4F39F6] font-medium text-[#FFFFFF]' : 'rounded-full'}   px-5 py-2 rounded-full cursor-pointer`}>
                     Products
                 </button>
                 <button 
                     onClick={() => setChangeBtn("carts")}
-                    className={`${changeBtn === "carts" ? 'bg-gradient-to-l from-[#9514FA] to-[#4F39F6] font-medium text-[#FFFFFF]' : 'rounded-full'} px-5 py-2 rounded-full`}>
-                    Cart(2)
+                    className={`${changeBtn === "carts" ? 'bg-gradient-to-l from-[#9514FA] to-[#4F39F6] font-medium text-[#FFFFFF]' : 'rounded-full'} px-5 py-2 rounded-full cursor-pointer`}>
+                    Cart({cartItems.length})
                 </button> 
                 
                 
             </div>
         </div>
-        <Suspense fallback={<span className="loading loading-spinner loading-xl"></span>}>
+        <Suspense 
+            fallback={
+                    <div className='flex mx-auto justify-center my-5'>
+                        <span className="loading loading-spinner loading-xl"></span>
+                    </div>
+                }
+            >
             {changeBtn === "products" ? 
-                <Products fetchProducts={fetchProducts}/> :
-                <Carts />
+                <Products  
+                    handleAddToCart={handleAddToCart} 
+                    fetchProducts={fetchProducts}
+                /> :
+                <Carts 
+                    cartItems={cartItems}
+                    setCartItems={setCartItems}
+                />
             }
             
         </Suspense>

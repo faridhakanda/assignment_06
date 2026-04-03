@@ -1,9 +1,11 @@
-import React from 'react';
+import React, {useState} from 'react';
 import { IoMdCheckmark } from "react-icons/io";
 
 import TagText from './tag';
 
-const Card = ({product}) => {
+const ProductCard = ({handleAddToCart, product}) => {
+    const [addedToCart, setAddedToCart] = useState(true);
+    console.log(product);
     return (
         <div className='w-96 bg-base-100 shadow-sm rounded-md p-5 m-2'>
             <div className='flex justify-between'>
@@ -26,9 +28,18 @@ const Card = ({product}) => {
                     
                 </ul>
             </div>
-            <button className='bg-gradient-to-l from-[#9514FA] to-[#4F39F6] w-full my-2 p-2 text-[#FFFFFF] font-medium rounded-full'>Buy Now</button>
+            <button 
+                onClick={() => 
+                    {
+                        handleAddToCart(product)
+                        setAddedToCart(false)
+                    }
+                    
+                }
+                className='cursor-pointer bg-gradient-to-l from-[#9514FA] to-[#4F39F6] w-full my-2 p-2 text-[#FFFFFF] font-medium rounded-full'
+            >{addedToCart ? "Buy Now" : "Added to Cart"}</button>
         </div>
     );
 };
 
-export default Card;
+export default ProductCard;

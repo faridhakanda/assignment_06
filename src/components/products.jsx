@@ -1,10 +1,17 @@
 
-import React from 'react';
+//import React, {useState} from 'react';
 import { use } from 'react';
-import Card from './ui/productCard';
 
-const Products = ({fetchProducts}) => {
+import ProductCard from './ui/productCard';
+
+const Products = ({handleAddToCart, fetchProducts}) => {
     const products = use(fetchProducts);
+    // const [cartItems, setCartItems] = useState([]);
+    // const handleAddToCart = (product) => {
+    //     const newProduct = [...cartItems, product];
+    //     setCartItems(newProduct);
+    //     console.log("Added to Product!", product);
+    // }
     // console.log(products,  "products")
     return (
         <div>
@@ -13,7 +20,7 @@ const Products = ({fetchProducts}) => {
                     <div 
                         key={product.id}
                     >
-                        <Card product={product}/>
+                        <ProductCard handleAddToCart={handleAddToCart} product={product}/>
                     </div>
                 )}
             </div>
