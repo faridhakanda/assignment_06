@@ -19,10 +19,10 @@ function App() {
   
   //const AddToCart = handleAddToCart();
     const [cartItems, setCartItems] = useState([]);
-    // const handleAddToCart = ({product}) => {
-    //     const newProduct = [...cartItems, product];
-    //     setCartItems(newProduct);
-    // }
+    const handleAddToCart = (product) => {
+        const newProduct = [...cartItems, product];
+        setCartItems(newProduct);
+    }
     //const handleAddToCart = handleAddToCart1();
   return (
     <div className="">
@@ -55,7 +55,7 @@ function App() {
                 }
             >
             {changeBtn === "products" ? 
-                <Products  fetchProducts={fetchProducts} cartItems={cartItems} setCartItems={setCartItems}/> : 
+                <Products  fetchProducts={fetchProducts} handleAddToCart={handleAddToCart}/> : 
                 <Carts  cartItems={cartItems} setCartItems={setCartItems}/>
             }
             

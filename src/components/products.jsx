@@ -4,7 +4,7 @@ import { use } from 'react';
 
 import ProductCard from './ui/productCard';
 
-const Products = ({ fetchProducts, cartItems, setCartItems}) => {
+const Products = ({ fetchProducts, handleAddToCart}) => {
     const products = use(fetchProducts);
     // const handleAddToCart = ({product}) => {
     //     const newProduct = [...cartItems, product];
@@ -18,7 +18,7 @@ const Products = ({ fetchProducts, cartItems, setCartItems}) => {
                     <div 
                         key={product.id}
                     >
-                        <ProductCard product={product} cartItems={cartItems} setCartItems={setCartItems}/>
+                        <ProductCard product={product} handleAddToCart={handleAddToCart}/>
                     </div>
                 )}
             </div>
