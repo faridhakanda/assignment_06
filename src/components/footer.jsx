@@ -16,32 +16,32 @@ const Footer = () => {
                     <div>
                         <h2 className='text-[#FFFFFF] font-bold text-[20px]'>Product</h2>
                         <ul className='text-[#627382] my-1'>
-                            <li>Features</li>
-                            <li>Pricing</li>
-                            <li>Templates</li>
-                            <li>Integrations</li>
+                            <li className='my-1'>Features</li>
+                            <li className='my-1'>Pricing</li>
+                            <li className='my-1'>Templates</li>
+                            <li className='my-1'>Integrations</li>
                         </ul>
                     </div>
                     <div>
                         <h2 className='text-[#FFFFFF] font-bold text-[20px]'>Company</h2>
                         <ul className='text-[#627382] my-1'>
-                            <li>About</li>
-                            <li>Blog</li>
-                            <li>Careers</li>
-                            <li>Press</li>
+                            <li className='my-1'>About</li>
+                            <li className='my-1'>Blog</li>
+                            <li className='my-1'>Careers</li>
+                            <li className='my-1'>Press</li>
                         </ul>
                     </div>
                     <div>
                         <h2 className='text-[#FFFFFF] font-bold text-[20px]'>Resources</h2>
                         <ul className='text-[#627382] my-1'>
-                            <li>Documentatoin</li>
-                            <li>Help Center</li>
-                            <li>Community</li>
-                            <li>Contact</li>
+                            <li className='my-1'>Documentatoin</li>
+                            <li className='my-1'>Help Center</li>
+                            <li className='my-1'>Community</li>
+                            <li className='my-1'>Contact</li>
                         </ul>
                     </div>
                     <div>
-                        <h2 className='text-[#FFFFFF] font-bold text-[20px]'>Social Links</h2>
+                        <h2 className='text-[#FFFFFF] font-bold text-[20px] mb-2'>Social Links</h2>
                         <ul className='flex space-x-2'>
                             <img className='bg-[#FFFFFF] p-1 rounded-full' src={Instragram} alt="instragram" />
                             <img className='bg-[#FFFFFF] p-1 rounded-full' src={Facebook} alt="facebook" />
