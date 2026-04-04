@@ -2,6 +2,7 @@ import React, {useState} from 'react';
 import { IoMdCheckmark } from "react-icons/io";
 
 import TagText from './tag';
+import { toast } from 'react-toastify';
 
 const ProductCard = ({ product, handleAddToCart}) => {
     const [addedToCart, setAddedToCart] = useState(false);
@@ -33,6 +34,7 @@ const ProductCard = ({ product, handleAddToCart}) => {
                     {
                         handleAddToCart(product)
                         setAddedToCart(!addedToCart)
+                        toast.success(`${product.name} is added!`)
                     }
                     
                 }

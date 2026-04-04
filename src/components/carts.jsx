@@ -1,5 +1,6 @@
 import React from 'react';
 import CartCard from './ui/cartCard';
+import { toast } from 'react-toastify';
 
 const Carts = ({cartItems, setCartItems}) => {
     
@@ -14,6 +15,7 @@ const Carts = ({cartItems, setCartItems}) => {
     
     const handleToProceed = () => {
         setCartItems([]);
+        toast('Cart list is cleared!');
     }
 
     const updatePrice = () => {

@@ -1,4 +1,5 @@
 import React from 'react';
+import { toast } from 'react-toastify';
 //import operation from "../../assets/products/camera.png"
 const CartCard = ({cartProduct, handleDeleteToCart}) => {
     //console.log(cartProduct, "Cart item is added!");
@@ -14,7 +15,10 @@ const CartCard = ({cartProduct, handleDeleteToCart}) => {
                     <p className='text-[#627382] font-medium text-[16px]'>${cartProduct.price}</p>
                 </div>
             </div>
-            <button onClick={() => handleDeleteToCart(cartProduct)} className='cursor-pointer text-[#FF3980] font-bold text-[16px]'>Remove</button>
+            <button onClick={() => {
+                handleDeleteToCart(cartProduct)
+                toast(`${cartProduct.name} is removed!`)
+            }} className='cursor-pointer text-[#FF3980] font-bold text-[16px]'>Remove</button>
             
         </div>
     );
