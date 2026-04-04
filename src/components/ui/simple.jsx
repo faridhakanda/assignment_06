@@ -80,7 +80,7 @@ const SimpleBanner = () => {
                                     )}
                                 </ul>
                                 
-                                <button className={`${data.active ? 'bg-[#F9FAFC] text-[#9514F1] ':'bg-gradient-to-l from-[#9514FA] to-[#4F39F6] text-[#FFFFFF]'} font-semibold px-2 py-1 rounded-full mx-auto  justify-center w-full`}>{data.button}</button>
+                                <button className={`${data.active ? 'bg-[#F9FAFC] text-[#9514F1] ':'bg-gradient-to-l from-[#9514FA] to-[#4F39F6] text-[#FFFFFF]'} font-semibold px-2 py-1 rounded-full mx-auto  justify-center w-full cursor-pointer`}>{data.button}</button>
                             </div>
                         </div>
                     )}
