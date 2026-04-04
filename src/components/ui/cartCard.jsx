@@ -9,7 +9,7 @@ const CartCard = ({cartProduct, handleDeleteToCart}) => {
                     <img className='items-center justify-center m-1 ' src={cartProduct.icon} alt={cartProduct.description} />
                 </div>
                 
-                <div>
+                <div className='text-start'>
                     <h2 className='font-semibold text-[20px] text-[#101727]'>{cartProduct.name}</h2>
                     <p className='text-[#627382] font-medium text-[16px]'>${cartProduct.price}</p>
                 </div>

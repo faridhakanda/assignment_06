@@ -12,10 +12,10 @@ const ProductCard = ({ product, handleAddToCart}) => {
                 <img className='' src={product.icon} alt={product.description} />
                 <TagText name={product.tag} />
             </div>
-            <div>
+            <div className='text-start py-2'>
                 <h2 className='font-bold text-[24px] my-2'>{product.name}</h2>
                 <p className='text-[#627382]'>{product.description}</p>
-                <h3 className='my-1 '><span className='font-bold text-[20px]'>${product.price}</span>/<span className='text-[#627382]'>{product.period}</span></h3>
+                <h3 className='my-1 text-start'><span className='font-bold text-[20px]'>${product.price}</span>/<span className='text-[#627382]'>{product.period}</span></h3>
                 <ul>
                     {product.features.map((feature, index) => 
                         <li 
