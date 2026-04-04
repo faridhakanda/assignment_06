@@ -51,7 +51,7 @@ const Footer = () => {
                 </div>
                 
                 <hr className='border-[1px] border-gray-800'></hr>
-                <div className='flex justify-between mx-auto w-[1200px] py-5 text-[#627382]'>
+                <div className='grid md:grid-cols-2 justify-between mx-auto w-[1200px] py-5 text-[#627382]'>
                     <p>&copy; 2026 Digitools. All rights reserved.</p>
                     <div className='flex space-x-5'>
                         <p>Privacy Policy</p>
